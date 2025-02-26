@@ -5,6 +5,10 @@ const path = require("path");
 const sendMail = async (req, res) => {
     try {
         const { name, email, message } = req.body;
+        console.log("Datos recibidos en el backend:", req.body); // 🔍 Verifica los datos recibidos
+        if (!name || !email || !message) {
+            return res.status(400).json({ error: "Todos los campos son obligatorios" });
+        }
 
         // Plantillas de correo
         const userTemplate = fs.readFileSync(

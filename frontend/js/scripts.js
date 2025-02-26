@@ -8,7 +8,7 @@ document.getElementById("form").addEventListener("submit", async function (e) {
     };
 
     try {
-        const response = await fetch("https://tuservidor.com/send-email", {
+        const response = await fetch("http://localhost:5000/api/contact", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
@@ -26,3 +26,20 @@ document.getElementById("form").addEventListener("submit", async function (e) {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    new Swiper(".mySwiper", {
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+    });
+});
