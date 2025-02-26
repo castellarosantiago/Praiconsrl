@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-const contactRoutes = require("./routes/contacRoutes.js");
+const contactRoutes = require("./routes/contactRoutes.js");
 
 const app = express();
 app.use(cors());
