@@ -1,0 +1,251 @@
+/* Variables globales */
+:root {
+    --font-family: 'Poppins', sans-serif;
+    --color-black: #111;
+    --color-white: #fff;
+    --color-green: #1a6e3a;
+    --color-dark-green: #125028;
+    --color-gray: #f4f4f4;
+    --color-dark-gray: #222;
+    --shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --spacing: 20px;
+}
+
+
+
+/* Estilos generales */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: var(--font-family);
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--color-dark-gray);
+    box-shadow: var(--shadow);
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+/* Contenedor del menú */
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botón del menú */
+.menu-btn {
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Chevron con animación */
+.chevron {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Lista del menú (oculta por defecto) */
+.menu-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    background: var(--color-white);
+    color: var(--color-black);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 180px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+/* Mostrar menú al hacer hover sobre el contenedor */
+.menu:hover .menu-list {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Rotar chevron al hacer hover */
+.menu:hover .chevron {
+    transform: rotate(180deg);
+}
+
+/* Estilos de los ítems del menú */
+.menu-list li {
+    padding: 12px;
+    border-bottom: 1px solid var(--color-gray);
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: var(--color-black);
+    display: block;
+}
+
+.menu-list li:hover {
+    background: var(--color-gray);
+}
+
+/* Secciones */
+.section {
+    text-align: center;
+    padding: var(--spacing) 40px;
+    border-radius: var(--border-radius); /* Esquinas redondeadas */
+    box-shadow: var(--shadow); /* Sombra suave */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.section.green {
+    background-color: var(--color-green);
+    color: var(--color-white);
+    box-shadow: var(--shadow);
+}
+
+.section.white {
+    background-color: var(--color-white);
+    color: var(--color-black);
+    box-shadow: var(--shadow);
+}
+
+/* Feed */
+.feed {
+    text-align: center;
+    padding: var(--spacing) 40px;
+    background-color: var(--color-gray);
+    color: var(--color-black);
+    border-radius: var(--border-radius); /* Esquinas redondeadas */
+    box-shadow: var(--shadow); /* Sombra suave */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.feed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing);
+    justify-content: center;
+}
+
+.feed-item {
+    background-color: var(--color-white);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feed-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al pasar el ratón */
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(45deg, #ddd, #bbb);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+    padding: var(--spacing);
+    text-align: center;
+}
+
+.footer form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: auto;
+}
+
+.footer input,
+.footer textarea {
+    margin: 5px 0;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.footer button {
+    padding: 10px 20px;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer button:hover {
+    background-color: var(--color-dark-green);
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: var(--spacing);
+}
+
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+}
+/* Estilos para los enlaces de pie de página */
+.footer-links {
+    margin-top: var(--spacing);
+}
+
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
