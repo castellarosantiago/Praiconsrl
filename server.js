@@ -10,12 +10,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Para procesar datos de formularios
 
-// Sirve todos los archivos estáticos desde la carpeta frontend
-app.use(express.static(path.join(__dirname, "frontend")));
+app.use(express.static(path.join(__dirname)));
 
-// Ruta principal para servir el index.html
-app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "frontend", "index.html"));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 app.use("/api/contact", contactRoutes);
 

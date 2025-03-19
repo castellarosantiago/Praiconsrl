@@ -10,3 +10,6 @@ const transporter = nodemailer.createTransport({
 
 module.exports = transporter;
 console.log("Transporter configurado correctamente");
+
+console.log("EMAIL.USER: ", process.env.EMAIL_USER);
+console.log("EMAIL.PASS: ", process.env.EMAIL_PASS);
