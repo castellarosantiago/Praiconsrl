@@ -523,7 +523,7 @@ body {
 
 .social-icons {
     display: flex;
-    gap: 1rem;
+    gap: 4rem;
 }
 
 .social-icon {
@@ -538,7 +538,7 @@ body {
 }
 
 .footer-bottom {
-    padding-top: 2rem;
+    padding-top: 3rem;
     border-top: 1px solid var(--color-gray-800);
     text-align: center;
 }
@@ -568,6 +568,8 @@ body {
     }
 
     .social-icons {
+        padding-right:1cm;
+        margin-bottom: 1cm;
         justify-content: center;
     }
 }
