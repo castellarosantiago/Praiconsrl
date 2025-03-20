@@ -67,17 +67,6 @@ body {
     text-decoration: none;
 }
 
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--color-primary);
-}
-
-.logo-subtext {
-    font-size: 0.875rem;
-    color: var(--color-gray-600);
-}
-
 .desktop-menu {
     display: none;
 }
@@ -237,25 +226,25 @@ body {
     width: 100%;
     height: 500px;
     overflow: hidden;
-  }
-  
-  .carousel-container {
+}
+
+.carousel-container {
     display: flex;
     flex-wrap: nowrap;
     width: 300%; /* Ajusta el ancho del contenedor para que se muestren todas las imágenes */
     height: 500px;
     overflow: hidden;
     transition: transform 0.5s ease-in-out; /* Agrega una transición suave a la propiedad transform */
-  }
-  
-  .carousel-container img {
+}
+
+.carousel-container img {
     width: calc(100% / 9); /* Ajusta el ancho de cada imagen para que se muestren todas */
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
-  }
-  
-  .carousel-button {
+}
+
+.carousel-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -268,42 +257,28 @@ body {
     cursor: pointer;
     font-size: 1.5rem;
     transition: background-color 0.2s;
-  }
-  
-  .carousel-button:hover {
+}
+
+.carousel-button:hover {
     background: rgba(0, 0, 0, 0.7);
-  }
-  
-  #prev {
+}
+
+#prev {
     left: 1rem;
-  }
-  
-  #next {
+}
+
+#next {
     right: 1rem;
-  }
-  
-  .carousel-dots {
+}
+
+.carousel-dots {
     position: absolute;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 0.5rem;
-  }
-  
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .dot.active {
-    background: white;
-  }
+}
 
 /* Services Section */
 .services {
@@ -350,16 +325,31 @@ body {
 
 /* Benefits Section */
 .benefits {
-    padding: 4rem 0;
-    background: var(--color-gray-50);
+    position: relative;
+    background-color: transparent;
+}
+
+.benefits::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../assets/Fondo\ celulosa.jpg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9; /* ajusta la opacidad de la imagen de fondo */
+    z-index: -1; /* asegúrate de que el elemento pseudo esté detrás del contenido */
 }
 
 .benefits h2 {
     text-align: center;
+    text-shadow: 0 0 10px var(--color-white);
     font-size: 1.875rem;
     font-weight: 700;
-    color: var(--color-gray-900);
-    margin-bottom: 3rem;
+    color: var(--color-primary-dark);
+    margin: 3rem;
 }
 
 .benefits-grid {
@@ -374,6 +364,15 @@ body {
     border-radius: 0.5rem;
     box-shadow: var(--shadow);
     transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items:center; 
+}
+
+.benefit-card#plagas{
+    grid-column: 1/4;
+    margin-bottom: 3rem;
 }
 
 .benefit-card:hover {
@@ -384,7 +383,8 @@ body {
 .benefit-icon {
     width: 2rem;
     height: 2rem;
-    margin-bottom: 1rem;
+    margin-right: 1cm;
+    margin-bottom: 2rem;
     color: var(--color-primary);
 }
 

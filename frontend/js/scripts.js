@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function nextImage() {
-        if (currentIndex === Math.ceil(images.length / 3) - 1) {
+        if (currentIndex === Math.ceil(images.length / 3) -1) {
             currentIndex = 0;
         } else {
             currentIndex++;
