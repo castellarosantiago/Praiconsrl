@@ -62,10 +62,44 @@ body {
 
 .logo {
     display: flex;
-    transform: scale(1.8);
-    align-items: center;
+    align-items: left;
     gap: 0.5rem;
     text-decoration: none;
+    margin-right: auto;
+    width: 90vw;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-white);
+    box-shadow: var(--shadow-md);
+    z-index: 50;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    transform: scale(1.8);
+    align-items: left;
+    gap: 0.5rem;
+    text-decoration: none;
+    margin-right: auto;
+    padding-left: 2cm;
+}
+
+.logo img{
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -74,6 +108,11 @@ body {
 }
 
 @media (min-width: 768px) {
+
+    .logo{
+        max-width: 200px;
+    }
+
     .desktop-menu {
         display: flex;
         gap: 2rem;
