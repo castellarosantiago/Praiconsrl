@@ -62,10 +62,12 @@ body {
 
 .logo {
     display: flex;
+    transform: scale(1.8);
     align-items: center;
     gap: 0.5rem;
     text-decoration: none;
 }
+
 
 .desktop-menu {
     display: none;
@@ -217,6 +219,7 @@ body {
 .carousel {
     position: relative;
     width: 100%;
+    max-width: 100vw;
     height: 500px;
     overflow: hidden;
 }
@@ -235,11 +238,12 @@ body {
     height: 500px;
     overflow: hidden;
     transition: transform 0.5s ease-in-out; /* Agrega una transición suave a la propiedad transform */
+    width: 500%;
 }
 
 .carousel-container img {
-    width: calc(100% / 9); /* Ajusta el ancho de cada imagen para que se muestren todas */
     height: 100%;
+    width: calc(100%/15);
     object-fit: cover;
     flex-shrink: 0;
 }

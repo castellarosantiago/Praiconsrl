@@ -28,52 +28,48 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-    const carouselContainer = document.querySelector(".carousel-container");
-    const images = carouselContainer.querySelectorAll("img");
-    let currentIndex = 0;
-    let intervalId;
+// Configuración inicial
+const imagesPerSlide = 3;
+const totalImages = 15;
+const totalSlides = totalImages / imagesPerSlide; // 5 slides
+const carouselContainer = document.querySelector(".carousel-container");
+const images = Array.from(carouselContainer.querySelectorAll("img"));
 
-    function showImage(index) {
-        const slideWidth = 33.33;
-        carouselContainer.style.transform = `translateX(${index * -slideWidth}%)`;
+let currentIndex = 0; // Inicia en la primera imagen
+
+// --- Configurar el ancho del contenedor ---
+carouselContainer.style.width = `${totalSlides * 100}%`;
+
+function updateCarousel() {
+    const slideWidth = 100 / totalSlides;
+    carouselContainer.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+}
+
+// --- Función para mover al siguiente slide ---
+function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= totalSlides) {
+        currentIndex = 0; // Vuelve al inicio
     }
+    updateCarousel();
+}
 
-    function nextImage() {
-        if (currentIndex === Math.ceil(images.length / 3) -1) {
-            currentIndex = 0;
-        } else {
-            currentIndex++;
-            showImage(currentIndex);
-        }
+// --- Función para mover al slide anterior ---
+function prevSlide() {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = totalSlides - 1; // Vuelve al último slide
     }
+    updateCarousel();
+}
 
-    function prevImage() {
-        if (currentIndex === 0) {
-            currentIndex = Math.ceil(images.length / 3) - 1;
-        } else {
-            currentIndex--;
-            showImage(currentIndex);
-        }
-    }
+// --- Configurar botones ---
+document.getElementById("next").addEventListener("click", nextSlide);
+document.getElementById("prev").addEventListener("click", prevSlide);
 
-    function startAutoPlay() {
-        intervalId = setInterval(nextImage, 3000);
-    }
+// --- Autoplay cada 3 segundos ---
+setInterval(nextSlide, 3000);
 
-    function resetAutoPlay() {
-        clearInterval(intervalId);
-        startAutoPlay();
-    }
-
-    document.getElementById("prev").addEventListener("click", () => {
-        prevImage();
-        resetAutoPlay();
-    });
-
-    document.getElementById("next").addEventListener("click", () => {
-        nextImage();
-        resetAutoPlay();
-    });
-
-    startAutoPlay();
+// --- Iniciar en la posición correcta ---
+updateCarousel();
 });
