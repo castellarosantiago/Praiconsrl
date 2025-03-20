@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             try {
-                const response = await fetch("http://localhost:5000/api/contact", {
+                const response = await fetch(`${process.env.RENDER_EXTERNAL_URL}/api/contact`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formData),
