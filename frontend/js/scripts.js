@@ -1,3 +1,4 @@
+const RENDER_EXTERNAL_URL = 'https://praiconsrl.onrender.com';
 document.addEventListener("DOMContentLoaded", function () {
     document
         .getElementById("form")
@@ -11,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             try {
-                const response = await fetch(`${process.env.RENDER_EXTERNAL_URL}/api/contact`, {
+                const response = await fetch(`${RENDER_EXTERNAL_URL}/api/contact`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(formData),
