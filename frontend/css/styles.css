@@ -97,7 +97,7 @@ body {
     padding-left: 2cm;
 }
 
-.logo img{
+.logo img {
     max-width: 100%;
     height: auto;
 }
@@ -109,7 +109,7 @@ body {
 
 @media (min-width: 768px) {
 
-    .logo{
+    .logo {
         max-width: 200px;
     }
 
@@ -275,10 +275,12 @@ body {
 .carousel-container {
     display: flex;
     flex-wrap: nowrap;
-    width: 300%; /* Ajusta el ancho del contenedor para que se muestren todas las imágenes */
+    width: 300%;
+    /* Ajusta el ancho del contenedor para que se muestren todas las imágenes */
     height: 500px;
     overflow: hidden;
-    transition: transform 0.5s ease-in-out; /* Agrega una transición suave a la propiedad transform */
+    transition: transform 0.5s ease-in-out;
+    /* Agrega una transición suave a la propiedad transform */
     width: 500%;
 }
 
@@ -384,8 +386,10 @@ body {
     background-image: url(../assets/Fondo\ celulosa.jpg);
     background-size: cover;
     background-position: center;
-    opacity: 0.9; /* ajusta la opacidad de la imagen de fondo */
-    z-index: -1; /* asegúrate de que el elemento pseudo esté detrás del contenido */
+    opacity: 0.9;
+    /* ajusta la opacidad de la imagen de fondo */
+    z-index: -1;
+    /* asegúrate de que el elemento pseudo esté detrás del contenido */
 }
 
 .benefits h2 {
@@ -410,12 +414,12 @@ body {
     box-shadow: var(--shadow);
     transition: transform 0.2s, box-shadow 0.2s;
     text-align: center;
-    display: flex; 
-    flex-direction: column; 
-    align-items:center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.benefit-card#plagas{
+.benefit-card#plagas {
     grid-column: 1/4;
     margin-bottom: 3rem;
 }
@@ -621,8 +625,24 @@ body {
     }
 
     .social-icons {
-        padding-right:1cm;
+        padding-right: 1cm;
         margin-bottom: 1cm;
         justify-content: center;
     }
+}
+
+.form-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745; /* Verde para éxito, cámbialo con JS si es error */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    display: none; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in-out;
+}
+.form-message.error {
+    background-color: #dc3545; /* Rojo para error */
 }
