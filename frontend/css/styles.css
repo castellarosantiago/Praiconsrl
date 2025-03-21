@@ -444,13 +444,14 @@ body {
     color: var(--color-gray-600);
 }
 
-@media (max-width: 768px) {
-    .benefits-grid {
-        width: 100%;
-        margin: 1rem 0;
-    }
-}
 
+@media (max-width: 768px) {
+    .benefits {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 /* About Section */
 .about {
     padding: 4rem 0;
