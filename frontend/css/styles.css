@@ -230,6 +230,8 @@ body {
     font-size: 1.25rem;
     color: var(--color-gray-600);
     margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--color-primary), 0 0 20px rgb(4, 212, 15), 0 0 30px rgb(65, 219, 19);
+    color: var(--color-gray-900);
 }
 
 .cta-button {
@@ -440,6 +442,13 @@ body {
 
 .benefit-card p {
     color: var(--color-gray-600);
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+    max-width: 100%;
+    overflow-x: hidden;
+    }
 }
 
 /* About Section */
