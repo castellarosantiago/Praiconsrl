@@ -30,10 +30,11 @@ const sendMail = async (req, res) => {
 
         // Enviar correo al administrador
         await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+            from: email,
             to: process.env.ADMIN_EMAIL,
             subject: "Nuevo mensaje de contacto",
             html: adminTemplate.replace("{{name}}", name).replace("{{email}}", email).replace("{{message}}", message),
+            replyTo: email,
         });
 
         res.status(200).json({ success: true, message: "Correo enviado con éxito." });
