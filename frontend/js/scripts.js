@@ -96,8 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("next").addEventListener("click", nextSlide);
     document.getElementById("prev").addEventListener("click", prevSlide);
 
-    // --- Autoplay cada 3 segundos ---
-    setInterval(nextSlide, 3000);
+    // --- Autoplay cada 5 segundos ---
+    setInterval(nextSlide, 5000);
 
     // --- Iniciar en la posición correcta ---
     updateCarousel();
