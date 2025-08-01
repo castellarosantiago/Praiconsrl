@@ -11,11 +11,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Para procesar datos de formularios
 
 app.use(express.static(path.join(__dirname)));
+app.use("/api/contact", contactRoutes);//Primero usar las rutas!!!!
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
-app.use("/api/contact", contactRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT,  "0.0.0.0", () => console.log(`Servidor corriendo en puerto ${PORT}`));

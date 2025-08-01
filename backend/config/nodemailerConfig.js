@@ -9,7 +9,13 @@ const transporter = nodemailer.createTransport({
 });
 
 module.exports = transporter;
-console.log("Transporter configurado correctamente");
+transporter.verify((error, success) => {
+    if (error) {
+        console.error("Transporte no está listo:", error);
+    } else {
+        console.log("Transporte listo para enviar correos.");
+    }
+});
 
-console.log("EMAIL.USER: ", process.env.EMAIL_USER);
-console.log("EMAIL.PASS: ", process.env.EMAIL_PASS);
+
+
